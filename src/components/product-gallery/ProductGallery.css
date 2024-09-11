@@ -1,0 +1,13 @@
+.product-gallery {
+    background-color: #222;
+    color: crimson;
+    padding: 1rem;
+}
+
+.product-gallery_container {
+    color: rgba(255, 255, 255, 0.781);
+    display: grid;
+    grid-template-columns: repeat (auto-fill, minmax (min (100%, 250px), 1fr));
+    gap: 1rem;
+    margin-block: 1rem;      
+}

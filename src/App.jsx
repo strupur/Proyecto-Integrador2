@@ -6,6 +6,7 @@ import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import AdminProduct from "./pages/admin-product/AdminProduct";
 import AcercaDeNosotros from "./pages/acerca-de-nosotros/AcercaDeNosotros";
+import ProductDetail from './pages/product-detail/ProductDetail';
 
 
 export default function App() {
@@ -17,6 +18,8 @@ export default function App() {
         <Routes>
 
           <Route path="/" element={<Home />} />
+
+          <Route path='/product-detail/:id' element={ <ProductDetail />} />
 
           <Route path="/contact" element={<Contact />} />
 
