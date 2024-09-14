@@ -51,3 +51,10 @@ body {
 .main-container {
 	flex: 1;
 }
+
+.modal-verCarrito {
+  
+  z-index: 3;
+  height: 20px;
+  border-radius: 11px 0px 0px 0px;
+}
