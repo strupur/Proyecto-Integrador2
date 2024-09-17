@@ -4,7 +4,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.716);
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -45,6 +45,15 @@
                 }
             }
         }
+
+        .btn {
+            display: flex; gap: .25rem; color: white;
+            background-color: crimson;
+            outline: none;
+            border: none; padding: .5rem;
+            font-size: 1rem;
+            border-radius: .25rem;
+            }
     }
 }
 

@@ -38,12 +38,14 @@ export default function ProductCard({ prod }) {
       </main>
       <footer className="card-footer">
 
-        <button className="product-btn">
-          <FontAwesomeIcon icon={faCartShopping} onClick={() => addProduct(prod)}/>
+        <button className="product-btn" onClick={() => addProduct(prod)}>
+          <FontAwesomeIcon icon={faCartShopping} />
         </button>
 
         <NavLink to={`/product-detail/${prod.id}`} className="product-btn">
-          <FontAwesomeIcon icon={faUpRightFromSquare} />
+
+         <FontAwesomeIcon icon={faUpRightFromSquare} />
+
         </NavLink>
       </footer>
     </article >

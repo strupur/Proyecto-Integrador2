@@ -8,18 +8,16 @@ import AdminProduct from "./pages/admin-product/AdminProduct";
 import AcercaDeNosotros from "./pages/acerca-de-nosotros/AcercaDeNosotros";
 import ProductDetail from './pages/product-detail/ProductDetail';
 import OrderDialog from './components/order-dialog/OrderDialog';
-import { useState } from 'react';
+
 
 
 export default function App() {
-  const [ toggleModal, setToggleModal ] = useState(false)
+
 
   return (
     <>
 
-      <button className='modal-verCarrito' onClick={() => setToggleModal(!toggleModal) }>Ver carrito</button>
-
-      <OrderDialog showModal={toggleModal} setToggleModal={setToggleModal} />
+      <OrderDialog />
 
       <Header />
 
@@ -28,7 +26,7 @@ export default function App() {
 
           <Route path="/" element={<Home />} />
 
-          <Route path='/product-detail/:id' element={ <ProductDetail />} />
+          <Route path='/product-detail/:id' element={<ProductDetail />} />
 
           <Route path="/contact" element={<Contact />} />
 
