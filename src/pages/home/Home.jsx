@@ -7,9 +7,9 @@ export default function Home() {
   return(
 
   <>
-    <section className="section-contenedor">
+    
         <Carousel /> {/* Aquí colocas el componente del carrusel */}
-      </section>
+      
 
     <ProductGallery/>
 

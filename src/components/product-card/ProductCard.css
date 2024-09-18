@@ -16,7 +16,7 @@
   /* Efecto hover en la tarjeta */
   .product-card:hover {
     transform: translateY(-5px); /* Eleva un poco la tarjeta */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    box-shadow: 0 6px 16px rgba(9, 82, 251, 0.656); /* Sombra más pronunciada */
   }
   
   /* Imagen del producto */
