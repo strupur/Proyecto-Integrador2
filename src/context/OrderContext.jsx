@@ -8,8 +8,9 @@ export const useOrder = () => useContext(OrderContext);
 export default function OrderProvider({ children }) {
     const [count, setCount] = useState(0);
     const [order, setOrder] = useState([]);
-    const [ toggleModal, setToggleModal ] = useState(false)
+    const [toggleModal, setToggleModal] = useState(false)
     const [total, setTotal] = useState(0);
+
 
     useEffect(() => {
 
@@ -20,22 +21,22 @@ export default function OrderProvider({ children }) {
 
     function addProduct(product) {
 
-        
+
 
         const productExists = order.find(prod => prod.id === product.id);
         console.log(productExists)
 
-        if(productExists) {
+        if (productExists) {
 
             productExists.quantity++;
             setOrder([...order])
 
         } else {
             product.quantity = 1;
-            setOrder([ ...order, product]);
+            setOrder([...order, product]);
         }
 
-        Swal.fire ({
+        Swal.fire({
             position: 'bottom-end',
             icon: 'success',
             padding: '.5rem',
@@ -47,11 +48,11 @@ export default function OrderProvider({ children }) {
 
     function calculateCount() {
         let cantidadItems = 0;
-    for(let item of order) {
-        cantidadItems += item.quantity;
-    }
+        for (let item of order) {
+            cantidadItems += item.quantity;
+        }
 
-    setCount(cantidadItems)
+        setCount(cantidadItems)
     }
 
     function calculateTotal() {
@@ -64,6 +65,16 @@ export default function OrderProvider({ children }) {
         setTotal(total)
     }
 
+    function removeProduct(id) {
+
+        const indice = order.findIndex(prod => prod.id === id);
+        const orderCopy = [...order];
+        orderCopy.splice(indice, 1)
+        setOrder(orderCopy)
+
+
+    }
+
     return (
         <OrderContext.Provider
             value={{
@@ -72,10 +83,11 @@ export default function OrderProvider({ children }) {
                 toggleModal,
                 setToggleModal,
                 count,
-                total
+                total,
+                removeProduct
             }}
         >
-            { children }
+            {children}
         </OrderContext.Provider>
     )
 

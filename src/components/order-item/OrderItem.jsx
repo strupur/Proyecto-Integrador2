@@ -1,8 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './OrderItem.css'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { useOrder } from '../../context/OrderContext'
 
 export default function OrderItem( {item} ) {
+
+    const { removeProduct } = useOrder()
+
   return (
 
     <li className='order-item'>
@@ -16,7 +20,8 @@ export default function OrderItem( {item} ) {
             {item.quantity}
         </div>
         <div className="item-actions">
-            <FontAwesomeIcon icon={faTrash} />
+            <FontAwesomeIcon icon={faTrash} 
+                            onClick={() => removeProduct(item.id)} />
         </div>
     </li>
   )

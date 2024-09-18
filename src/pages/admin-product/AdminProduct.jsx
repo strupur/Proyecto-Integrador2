@@ -177,7 +177,7 @@ export default function AdminProduct() {
               <div className="input-group">
                 <label htmlFor="">Categoría</label>
                 <select {...register("category")}>\
-                  <option value="instrumento-percusíon">Intrumento de percusíon</option>
+                  <option value="Instrumento-percusíon">Intrumento de percusíon</option>
                   <option value="Instrumento-cuerdas">Instrumento de cuerdas</option>
                   <option value="Intrumento-electronico">Intrumento electronico</option>
                   <option value="Intrumento-viento">Intrumento de viento</option>

@@ -46,6 +46,7 @@ export default function ProductDetail() {
             <img src={product?.image}
               alt="{prod.image}"
               className="product-image" />
+              <h2>{product?.price}</h2>
 
             <button onClick={() => addProduct(product)}>Agregar producto al carrito</button>
 

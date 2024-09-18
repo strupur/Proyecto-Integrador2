@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './AdminRow.css';
+import {  faPencil, faShield, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default function AdminRow({ producto, deleteProduct, handleEditProduct }) {
   return (
@@ -17,7 +19,7 @@ export default function AdminRow({ producto, deleteProduct, handleEditProduct })
 
       </td>
       <td className="price">
-        {producto.price}
+        ${producto.price}
       </td>
       <td className="category">
         {producto.category}
@@ -27,10 +29,20 @@ export default function AdminRow({ producto, deleteProduct, handleEditProduct })
       </td>
       <td className="actions">
         <div className="actions-container">
-          <button className="btn" onClick={  () => handleEditProduct(producto)   }>
-            Editar
+
+          <button className="btn" onClick={() => handleEditProduct(producto)}>
+
+          <FontAwesomeIcon className='btn' icon={faPencil}></FontAwesomeIcon>
+
           </button>
-          <button className="btn btn-danger" onClick={  () => deleteProduct(producto.id)  }>Eliminar</button> 
+
+
+          <button className="btn btn-danger" onClick={() => deleteProduct(producto.id)}>
+
+          <FontAwesomeIcon className='btn-danger' icon={faTrash }></FontAwesomeIcon>
+
+          </button>
+
         </div>
       </td>
 
