@@ -1,13 +1,36 @@
+
+
+.product-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    background-image: linear-gradient(180deg, rgb(0, 0, 255), rgb(0, 235, 243));
+    background-size: 100%;
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    margin-top: 10px;
+}
+
 .product-gallery {
-    background-color: #222;
+    background-color: #2b2929;
     color: crimson;
     padding: 1rem;
 }
 
 .product-gallery_container {
-    color: rgba(255, 255, 255, 0.781);
-    display: grid;
-    grid-template-columns: repeat (auto-fill, minmax (min (100%, 250px), 1fr));
-    gap: 1rem;
-    margin-block: 1rem;      
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  
 }

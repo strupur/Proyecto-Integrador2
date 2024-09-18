@@ -31,8 +31,9 @@ export default function ProductGallery() {
     return (
 
 
+
         <section className="product-section">
-            <h2>Lista de productos</h2>
+            <h1 className='gallery-title'>PRODUCTO MAS VENDIDO</h1>
 
             <div className='product-gallery_container'>
 

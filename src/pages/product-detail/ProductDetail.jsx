@@ -43,6 +43,10 @@ export default function ProductDetail() {
         <div className='product-detail-container'>
 
             <h1>{product?.name}</h1>
+            <img src={product?.image}
+              alt="{prod.image}"
+              className="product-image" />
+
             <button onClick={() => addProduct(product)}>Agregar producto al carrito</button>
 
         </div>
