@@ -13,17 +13,12 @@
     transition: margin 0.3s, border 0.3s, box-shadow 0.3s;
   }
   
-  /* Efecto hover en la tarjeta */
+  
   .product-card:hover {
-    transform: translateY(-5px); /* Eleva un poco la tarjeta */
-    box-shadow: 0 6px 16px rgba(9, 82, 251, 0.656); /* Sombra más pronunciada */
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 16px rgba(9, 82, 251, 0.656); 
   }
   
-  /* Imagen del producto */
-  .card-header  {
-    
-  }
-
   .product-image {
     width: 100%;
   height: 250px;
@@ -32,7 +27,7 @@
   }
   
   .product-card:hover .card-header img {
-    
+    transform: scale(1.05)
   }
   
   /* Cuerpo de la tarjeta */
@@ -45,6 +40,7 @@
   
   /* Categoría del producto */
   .product-category {
+    margin-top: 25px;
     padding: 0.25rem 0.75rem;
   background-color: rgb(15, 145, 244);
   color: white;
@@ -99,10 +95,11 @@
   
   /* Botones del pie */
   .product-btn {
-    background-color: crimson;
+  
+  background-color: crimson;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   font-size: 1rem;
   border-radius: 0.25rem;
   cursor: pointer;
@@ -115,19 +112,30 @@
   
   /* Para íconos del botón */
   .product-btn svg {
-    margin-right: 0.5rem;
+    margin-right: 0rem;
   }
   
   
-  @media (max-width: 768px) {
-    .product-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila en pantallas medianas */
+  /* ?================ SECCION EN MOVIL ================ */
+
+  @media screen and (width <=970px) {
+    .product-card {
+        width: calc(50% - 3rem);
+        min-width: calc(50% - 3rem);
     }
-  }
-  
-  @media (max-width: 480px) {
-    .product-container {
-       
+}
+
+@media screen and (width <=750px) {
+    .product-card {
+        width: 100%;
+        min-width: 100%;
+        margin: 0px 10px 0px 10px;
     }
-  }
+
+    .contenedor-cards {
+        padding: 20px 20px 0px;
+    }
+}
+
+
   

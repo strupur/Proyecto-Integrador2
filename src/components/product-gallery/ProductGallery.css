@@ -35,3 +35,11 @@
     
   
 }
+
+@media screen and (width <=750px) {
+.product-gallery_container {
+
+    padding: 20px 20px 0px;
+
+}
+}

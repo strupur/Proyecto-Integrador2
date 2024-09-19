@@ -12,3 +12,11 @@
     }
 }
 
+/* ====== SECCION HEADER EN MOVIL ====== */
+
+@media (max-width: 790px) {
+    .main-carousel {
+        margin-top: 90px;
+    }
+}
+

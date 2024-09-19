@@ -31,3 +31,20 @@
     font-family: sans-serif;
     color: #4b4a4a;
 }
+
+/* ====== SECCION SERVICE FEATURE EN MOVIL====== */
+
+@media screen and (width <=500px) {
+
+    .contenedore-service-features {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        background: #b0afb0;
+        height: auto;
+    }
+
+    .div-feature {
+        margin: 40px;
+    }
+}

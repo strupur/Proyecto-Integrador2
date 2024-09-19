@@ -1,6 +1,6 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faBoxesPacking, faShield, faShippingFast } from '@fortawesome/free-solid-svg-icons';
+import {  faBox,faShield, faShippingFast } from '@fortawesome/free-solid-svg-icons';
 import './Feature.css'
 
 
@@ -9,7 +9,7 @@ export default function Feature() {
     <section className="contenedore-service-features">
 
   <article className="div-feature">
-  <FontAwesomeIcon className='feature-img' icon={faBoxesPacking }></FontAwesomeIcon>
+  <FontAwesomeIcon className='feature-img' icon={faBox }></FontAwesomeIcon>
     <div className="div-feature-parrafo">
       <p className="parrafo-feature">
         Recibe tus productos protegidos con nuestro embalaje premium.

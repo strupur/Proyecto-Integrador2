@@ -9,7 +9,7 @@
     padding: 0 1rem;
     background: linear-gradient(to bottom, #1803d9, rgb(150, 197, 243));
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
 }
 
@@ -177,6 +177,9 @@
 
     .div-logo-head2 {
         display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 35px;
         font-size: 40px;
         letter-spacing: 1px;
         letter-spacing: -5px;
@@ -256,6 +259,8 @@
     .main-header {
         display: flex;
         flex-direction: column-reverse;
+        position: sticky;
+        position: fixed;
     }
 
     .input-burger:checked~.main-nav {

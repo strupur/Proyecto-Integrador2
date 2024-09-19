@@ -163,7 +163,7 @@ export default function AdminProduct() {
 
               </div>
 
-              <div className="input-group">
+              <div className="input-group">Precio
                 <input type="number" {...register("price", { required: true }) } />
 
                 { errors.price && <div className="input-error">El campo price es requerido</div> }
