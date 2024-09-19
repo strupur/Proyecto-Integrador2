@@ -52,4 +52,18 @@ body {
 	flex: 1;
 }
 
+.btn-icon {
+  padding: .125rem;
+  width: 24px;
+  background-color: royalblue;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: .125rem;
+
+  &.btn-dange {
+  background-color: crimson;
+  }
+}
+
 

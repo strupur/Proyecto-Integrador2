@@ -1,13 +1,16 @@
 .order-item {
     display: flex;
-    gap: .5rem;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    
+
 
     &:not(:last-child) {
         border-bottom: 1px solid rgba(85, 20, 20, 0.3);
     }
 
-    .item-image img {
+    .item-imagen img {
         width: 36px;
         height: 36px;
         border-radius: 50%;
@@ -16,6 +19,26 @@
 
     .item-info {
         font-weight: 500;
+        flex: 1; /* Hace que el nombre ocupe más espacio */
+        margin-left: 10px;
+    }
+
+    .item-count {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px; /* Añade margen entre el input y las acciones */
+    }
+
+    .item-input {
+        text-align: center;
+        width: 50px;
+        height: 30px; 
+        border-radius: 4px;
+        border: 1px solid #ccc;
+
+        width: 5ch;
+        align-items: center;
     }
 
     .item-actions {

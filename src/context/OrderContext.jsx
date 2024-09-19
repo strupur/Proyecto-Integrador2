@@ -67,11 +67,35 @@ export default function OrderProvider({ children }) {
 
     function removeProduct(id) {
 
-        const indice = order.findIndex(prod => prod.id === id);
-        const orderCopy = [...order];
-        orderCopy.splice(indice, 1)
-        setOrder(orderCopy)
+        // const indice = order.findIndex(prod => prod.id === id);
+        // const orderCopy = [...order];
+        // orderCopy.splice(indice, 1)
+        // setOrder(orderCopy)
 
+        const orderFiltered = order.filter(prod => prod.id !== id)
+
+        setOrder(orderFiltered)
+
+    }
+
+    function changeItemQuantity(id, value) {
+
+        // const newOrder = order.map(prod => {
+
+        // if(prod.id === id) {
+        //     prod.quantity = value;
+        // }
+
+        //     return prod;
+        // })
+
+        // setOrder(newOrder)
+
+        const producto = order.find(prod => prod.id === id);
+
+        producto.quantity = value;
+
+        setOrder([ ...order ])
 
     }
 
@@ -84,7 +108,8 @@ export default function OrderProvider({ children }) {
                 setToggleModal,
                 count,
                 total,
-                removeProduct
+                removeProduct,
+                changeItemQuantity
             }}
         >
             {children}
