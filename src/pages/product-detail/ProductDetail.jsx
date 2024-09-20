@@ -79,7 +79,7 @@ const URL = import.meta.env.VITE_SERVER_URL;
 
 export default function ProductDetail() {
 
-    const { addProduct } = useOrder();
+    const { addMasProduct } = useOrder();
     
     const [product, setProduct] = useState();
     const [quantity, setQuantity] = useState(1);  // Estado para la cantidad seleccionada
@@ -118,10 +118,7 @@ export default function ProductDetail() {
 
     // Función para agregar el producto al carrito con la cantidad seleccionada
     const handleAddToCart = () => {
-        // Aquí se añade la cantidad al carrito
-        for (let i = 0; i < quantity; i++) {
-            addProduct(product);  // Agrega el producto repetidamente según la cantidad seleccionada
-        }
+        addMasProduct({ ...product, quantity });  // Añade el producto con la cantidad seleccionada directamente
     }
 
     return (

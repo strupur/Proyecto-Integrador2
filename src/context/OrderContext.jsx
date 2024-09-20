@@ -99,7 +99,18 @@ export default function OrderProvider({ children }) {
 
     }
 
-    
+    function addMasProduct(product) {
+        const productExists = order.find(prod => prod.id === product.id);
+
+        if (productExists) {
+            // Si el producto ya existe en el carrito, incrementa su cantidad en base a la cantidad seleccionada
+            productExists.quantity += product.quantity;
+            setOrder([...order]);  // Asegúrate de actualizar el estado para que React lo detecte
+        } else {
+            // Si el producto no existe en el carrito, añádelo con la cantidad seleccionada
+            setOrder([...order, { ...product }]);
+        }
+    }
 
     return (
         <OrderContext.Provider
@@ -111,7 +122,8 @@ export default function OrderProvider({ children }) {
                 count,
                 total,
                 removeProduct,
-                changeItemQuantity
+                changeItemQuantity,
+                addMasProduct
             }}
         >
             {children}
