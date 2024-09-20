@@ -16,6 +16,12 @@ export default function OrderItem({ item }) {
             <div className='item-info'>
                 {item.name}
             </div>
+            <div className='item-price'>
+                $ {item.price}
+            </div>
+            <div className='item-subtotal'>
+                $ {item.price * item.quantity}
+            </div>
             <div className="item-count">
                 <input
                     className='item-input'

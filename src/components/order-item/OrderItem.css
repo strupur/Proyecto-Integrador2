@@ -23,6 +23,14 @@
         margin-left: 10px;
     }
 
+    .item-price {
+        margin-right: 190px;
+    }
+
+    .item-subtotal {
+        margin-right: 5px;
+    }
+
     .item-count {
         display: flex;
         align-items: center;
