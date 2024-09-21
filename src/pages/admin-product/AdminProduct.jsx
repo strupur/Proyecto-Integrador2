@@ -144,13 +144,13 @@ export default function AdminProduct() {
 
   return (
     <>
-      <div className="admin-container">
+      <div className="admin-container-adminProduct">
           {/* Contenedor del formulario */}
           <div className="form-container">
             <h1>AdminProduct</h1>
             <form className="admin-form" onSubmit={handleSubmit(onProductSubmit)}>
 
-              <div className="input-group">
+              <div className="input-group-adminProduct">
                 <label htmlFor="name">Nombre producto</label>
 
                 <input type="text" id="name" 
@@ -163,18 +163,18 @@ export default function AdminProduct() {
 
               </div>
 
-              <div className="input-group">Precio
+              <div className="input-group-adminProduct">Precio
                 <input type="number" {...register("price", { required: true }) } />
 
                 { errors.price && <div className="input-error">El campo price es requerido</div> }
               </div>
 
-              <div className="input-group">
+              <div className="input-group-adminProduct">
                 <label htmlFor="description">Descripción</label>
                 <textarea {...register("description")} rows={5}></textarea>
               </div>
 
-              <div className="input-group">
+              <div className="input-group-adminProduct">
                 <label htmlFor="">Categoría</label>
                 <select {...register("category")}>\
                   <option value="Instrumento-percusíon">Intrumento de percusíon</option>
@@ -184,12 +184,12 @@ export default function AdminProduct() {
                 </select>
               </div>
 
-              <div className="input-group">
+              <div className="input-group-adminProduct">
                 <label htmlFor="createdAt">Fecha de ingreso</label>
                 <input type="date" {...register("createdAt")}  />
               </div>
 
-                <div className="input-group">
+                <div className="input-group-adminProduct">
                   <label htmlFor="">Imagen</label>
                   <input type="url" {...register("image") } />
                 </div>

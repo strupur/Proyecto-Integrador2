@@ -13,6 +13,21 @@
         color: rgb(0, 110, 255);
     }
 
+    .email {
+        font-weight: 600;
+        color: rgb(0, 110, 255);
+    }
+
+    .password {
+        font-weight: 600;
+        color: rgb(0, 110, 255);
+    }
+
+    .repeatpass{
+        font-weight: 600;
+        color: rgb(0, 110, 255);
+    }
+
     .description {
         .description-container {
             display: -webkit-box;
@@ -20,14 +35,10 @@
             overflow: hidden;
             -webkit-box-orient: vertical;
             color: rgb(0, 110, 255);
+            font-weight: 600;
         }
     }
 
-    .price {
-        font-weight: 600;
-        color: rgb(255, 0, 0);
-        font-size: 30px;
-    }
 
     .date {
         font-size: 15px;
@@ -35,7 +46,7 @@
         padding: 0px 8px 0px 8px;
         width: 90px;
         white-space: nowrap; 
-        color:#888787;
+        color:#165efa;
         font-weight: 600;
     }
 

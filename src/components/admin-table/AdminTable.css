@@ -7,16 +7,16 @@
 
     th, td {
         padding: .5rem;
-        border: 1px solid #333;
+        border: 1px solid #5d5c5c;
     }
 
     th {
-        background-color: #333;
+        background-color: #727272;
         color: white;
     }
 
     tr:nth-child(even) {
-        background-color: #222;
+        background-color: #858484;
     }
     
 }

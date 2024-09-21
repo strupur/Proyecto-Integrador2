@@ -60,8 +60,8 @@ export default function AdminUser() {
   function deleteProduct(identificador) {
 
     Swal.fire({
-      title: "Borrar producto",
-      text: "Realmente desea borrar este producto",
+      title: "Borrar usuario",
+      text: "Realmente desea borrar este usuario",
       icon: "warning",
       reverseButtons: true,
       showCancelButton: true,
@@ -79,7 +79,7 @@ export default function AdminUser() {
         // Mensaje para el usuario de que algo falló
         Swal.fire({
           title: "Error al borrar",
-          text: "El producto no fue borrado",
+          text: "El usuario no fue borrado",
           icon: "error"
         })
       }
@@ -98,7 +98,7 @@ export default function AdminUser() {
         console.log(response.data)
         Swal.fire({
           title: "Actualización correcta",
-          text: "El producto fue actualizado correctamente",
+          text: "El usuario fue actualizado correctamente",
           icon: "success",
           timer: 1500
         })
@@ -145,18 +145,18 @@ export default function AdminUser() {
 
   return (
     <>
-      <div className="admin-container">
+      <div className="admin-container-adminUser">
         {/* Contenedor del formulario */}
         <div className="form-container">
           <h1>AdminUser</h1>
           <form className="admin-form" onSubmit={handleSubmit(onProductSubmit)}>
 
-            <div className="input-group">
+            <div className="input-group-adminUser">
               <label htmlFor="">Imagen</label>
               <input type="url" {...register("image")} />
             </div>
 
-            <div className="input-group">
+            <div className="input-group-adminUser">
               <label htmlFor="name">Nombre Completo</label>
 
               <input type="text" id="name"
@@ -169,7 +169,7 @@ export default function AdminUser() {
 
             </div>
 
-            <div className="input-group">
+            <div className="input-group-adminUser">
               <label htmlFor="email">Correo Electronico</label>
 
               <input type="email" id="email"
@@ -182,7 +182,7 @@ export default function AdminUser() {
 
             </div>
 
-            <div className="input-group">
+            <div className="input-group-adminUser">
               <label htmlFor="password">Contraseña</label>
 
               <input type="password" id="password"
@@ -195,7 +195,7 @@ export default function AdminUser() {
 
             </div>
 
-            <div className="input-group">
+            <div className="input-group-adminUser">
               <label htmlFor="repeatpass">Repetir Contraseña</label>
 
               <input type="repeatpass" id="repeatpass"
@@ -208,12 +208,12 @@ export default function AdminUser() {
 
             </div>
 
-            <div className="input-group">
+            <div className="input-group-adminUser">
               <label htmlFor="createdAt">Fecha de ingreso</label>
               <input type="date" {...register("createdAt")} />
             </div>
 
-            <div className="input-group">
+            <div className="input-group-adminUser">
               <label htmlFor="">Seleccione su Pais</label>
               <select {...register("category")}>\
               <option value=""></option>
@@ -241,7 +241,7 @@ export default function AdminUser() {
               </select>
             </div>
 
-            <div className="input-group">
+            <div className="input-group-adminUser">
               <label htmlFor="description">Observacíon</label>
               <textarea {...register("description")} rows={5}></textarea>
             </div>

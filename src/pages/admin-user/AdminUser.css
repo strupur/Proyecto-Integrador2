@@ -22,7 +22,7 @@
         }  
     }
 
-    .input-group {
+    .input-group-adminUser {
         display: flex;
         flex-direction: column;
         gap: .25rem;
@@ -61,7 +61,7 @@
     }
 }
 
-.admin-container {
+.admin-container-adminUser {
     margin-top: 100px;
     padding: 1.5rem;
     display: flex;

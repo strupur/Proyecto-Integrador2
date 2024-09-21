@@ -147,7 +147,7 @@ export default function Register() {
       <div className="admin-container-register">
         {/* Contenedor del formulario */}
         <div className="form-container">
-          <h1>Register</h1>
+          <h1 className="title-register">Registro</h1>
           <form className="admin-form" onSubmit={handleSubmit(onProductSubmit)}>
 
             <div className="input-group-register">
