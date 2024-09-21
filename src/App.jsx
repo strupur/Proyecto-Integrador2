@@ -8,6 +8,8 @@ import AdminProduct from "./pages/admin-product/AdminProduct";
 import AcercaDeNosotros from "./pages/acerca-de-nosotros/AcercaDeNosotros";
 import ProductDetail from './pages/product-detail/ProductDetail';
 import OrderDialog from './components/order-dialog/OrderDialog';
+import AdminUser from './pages/admin-user/AdminUser';
+import Register from './pages/register/Register';
 
 
 
@@ -37,6 +39,14 @@ export default function App() {
           />
 
           <Route path="/acerca-de-nosotros" element={<AcercaDeNosotros />} />
+
+          <Route path="/admin-user"
+            element={<AdminUser />}
+          />
+
+          <Route path="/register"
+            element={<Register />}
+          />
 
         </Routes>
       </main>
