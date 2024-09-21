@@ -1,4 +1,5 @@
 .admin-table-row {
+    
     .image {
         img {
             width: 50px;
@@ -78,3 +79,12 @@
         }
     }
 }
+
+@media screen and (width < 900px) {
+    .admin-table-row {
+        overflow-x: auto;
+        border-collapse: collapse;
+        
+    }
+}
+

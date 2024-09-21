@@ -1,8 +1,8 @@
 .admin-table {
     flex: 1;
     padding: 1rem;
-   
     border-collapse: collapse;
+    overflow-x: auto;
     width: 100%;
 
     th, td {
@@ -19,4 +19,12 @@
         background-color: #858484;
     }
     
+}
+
+@media screen and (width < 500px) {
+    .admin-table-row {
+        overflow-x: auto;
+        border-collapse: collapse;
+        
+    }
 }
