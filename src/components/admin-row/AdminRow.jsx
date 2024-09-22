@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './AdminRow.css';
-import {  faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default function AdminRow({ producto, deleteProduct, handleEditProduct }) {
   return (
@@ -32,14 +32,14 @@ export default function AdminRow({ producto, deleteProduct, handleEditProduct })
 
           <button className="btn" onClick={() => handleEditProduct(producto)}>
 
-          <FontAwesomeIcon className='btn' icon={faPencil}></FontAwesomeIcon>
+            <FontAwesomeIcon className='btn' icon={faPencil}></FontAwesomeIcon>
 
           </button>
 
 
           <button className="btn btn-danger" onClick={() => deleteProduct(producto.id)}>
 
-          <FontAwesomeIcon className='btn-danger' icon={faTrash }></FontAwesomeIcon>
+            <FontAwesomeIcon className='btn-danger' icon={faTrash}></FontAwesomeIcon>
 
           </button>
 

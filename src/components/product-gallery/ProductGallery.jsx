@@ -30,15 +30,13 @@ export default function ProductGallery() {
 
     return (
 
-
-
         <section className="product-section">
             <h1 className='gallery-title'>PRODUCTO MAS VENDIDO</h1>
 
             <div className='product-gallery_container'>
 
                 {
-                    products.map(producto => (<ProductCard key={producto.id} prod={producto}/>))
+                    products.map(producto => (<ProductCard key={producto.id} prod={producto} />))
                 }
 
 

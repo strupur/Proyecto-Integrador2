@@ -34,7 +34,7 @@ export default function OrderItem({ item }) {
             <div className="item-actions">
                 <button className='btn-icon btn-danger' onClick={() => removeProduct(item.id)}>
 
-                    <FontAwesomeIcon icon={faTrash}/>
+                    <FontAwesomeIcon icon={faTrash} />
                 </button>
             </div>
         </li>

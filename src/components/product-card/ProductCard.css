@@ -1,101 +1,96 @@
-/* Contenedor de todas las tarjetas */
+.product-card {
+  background-image: linear-gradient(to bottom, rgb(183, 183, 182), rgb(253, 253, 254));
+  padding: 16px;
+  border-radius: 8px;
+  width: calc((100vw/3) - 3rem);
+  border: 1px solid transparent;
+  transition: margin 0.3s, border 0.3s, box-shadow 0.3s;
+}
 
 
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(9, 82, 251, 0.656);
+}
 
-  
-  /* Tarjeta de producto */
-  .product-card {
-    background-image: linear-gradient(to bottom, rgb(183, 183, 182), rgb(253, 253, 254));
-    padding: 16px;
-    border-radius: 8px;
-    width: calc((100vw/3) - 3rem);
-    border: 1px solid transparent;
-    transition: margin 0.3s, border 0.3s, box-shadow 0.3s;
-  }
-  
-  
-  .product-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 6px 16px rgba(9, 82, 251, 0.656); 
-  }
-  
-  .product-image {
-    width: 100%;
+.product-image {
+  width: 100%;
   height: 250px;
-  object-fit: contain; 
+  object-fit: contain;
   transition: transform 0.3s ease-in-out;
-  }
-  
-  .product-card:hover .card-header img {
-    transform: scale(1.05)
-  }
-  
-  /* Cuerpo de la tarjeta */
-  .card-body {
-    padding: 1rem;
+}
+
+.product-card:hover .card-header img {
+  transform: scale(1.05)
+}
+
+
+.card-body {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  }
-  
-  /* Categoría del producto */
-  .product-category {
-    margin-top: 25px;
-    padding: 0.25rem 0.75rem;
+}
+
+
+.product-category {
+  margin-top: 25px;
+  padding: 0.25rem 0.75rem;
   background-color: rgb(15, 145, 244);
   color: white;
   text-transform: uppercase;
   font-size: 1rem;
-  border-radius:1rem 1rem;
+  border-radius: 1rem 1rem;
   width: max-content;
-  }
+}
+
+.product-title {
+  padding: 0.25rem 0.75rem;
+  color: rgb(31, 109, 233);
+  text-transform: uppercase;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  width: max-content;
+}
+
+
+.product-description-l {
+  font-weight: 600;
+  text-align: center;
+  word-wrap: break-word;
+  color: rgb(29, 126, 237);
   
-  /* Título del producto */
-  .product-title {
-    padding: 0.25rem 0.75rem;
-    color: rgb(31, 109, 233);
-    text-transform: uppercase;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-    width: max-content;
-  }
-  
-  /* Descripción del producto */
-  .product-description {
-    text-align: center;
-    word-wrap: break-word; 
-    color: blue;/* Asegura que el texto largo se ajuste a la línea */
-  }
-  
-  /* Información del producto (Precio) */
-  .product-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .product-price {
-    font-size: 2rem;
+}
+
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-size: 2rem;
   font-weight: 600;
   color: crimson;
-  }
-  
-  .price {
-    font-size: 3rem;
-  }
-  
-  /* Pie de la tarjeta */
-  .card-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-top: 1px solid #ddd;
-  }
-  
-  /* Botones del pie */
-  .product-btn {
-  
+}
+
+.price {
+  font-size: 3rem;
+}
+
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+}
+
+
+.product-btn {
+
   background-color: crimson;
   color: white;
   border: none;
@@ -104,38 +99,35 @@
   border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  }
-  
-  .product-btn:hover {
-    background-color: darkred;
-  }
-  
-  /* Para íconos del botón */
-  .product-btn svg {
-    margin-right: 0rem;
-  }
-  
-  
-  /* ?================ SECCION EN MOVIL ================ */
+}
 
-  @media screen and (width <=970px) {
-    .product-card {
-        width: calc(50% - 3rem);
-        min-width: calc(50% - 3rem);
-    }
+.product-btn:hover {
+  background-color: darkred;
+}
+
+
+.product-btn svg {
+  margin-right: 0rem;
+}
+
+
+/* ?================ SECCION EN MOVIL ================ */
+
+@media screen and (width <=970px) {
+  .product-card {
+    width: calc(50% - 3rem);
+    min-width: calc(50% - 3rem);
+  }
 }
 
 @media screen and (width <=750px) {
-    .product-card {
-        width: 100%;
-        min-width: 100%;
-        margin: 0px 10px 0px 10px;
-    }
+  .product-card {
+    width: 100%;
+    min-width: 100%;
+    margin: 0px 10px 0px 10px;
+  }
 
-    .contenedor-cards {
-        padding: 20px 20px 0px;
-    }
+  .contenedor-cards {
+    padding: 20px 20px 0px;
+  }
 }
-
-
-  

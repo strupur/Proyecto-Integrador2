@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form"
-import AdminTable from "../../components/admin-table-register/AdminTableRegister";
+
 
 import './Register.css';
 import Swal from "sweetalert2";
@@ -11,7 +11,7 @@ const URL = "https://66da9325f47a05d55be52fee.mockapi.io/api/v1";
 
 export default function Register() {
   const [products, setProducts] = useState([]);
-  // Estado para manejar la edición de productos
+  
   const [selectedProduct, setSelectedProduct] = useState(null)
 
   const { register, setValue, reset, handleSubmit, formState: { errors, isValid } } = useForm();
@@ -41,7 +41,7 @@ export default function Register() {
   async function getProducts() {
 
     try {
-      // Carga de productos
+
       const response = await axios.get(`${URL}/users`);
 
       console.log(response.data);
@@ -51,9 +51,9 @@ export default function Register() {
     } catch (error) {
       console.log(error);
 
-    } // end catch block
+    }
 
-  } //end getProducts function
+  }
   // !getProducts();
 
   function deleteProduct(identificador) {
@@ -75,7 +75,7 @@ export default function Register() {
         }
       } catch (error) {
         console.log(error)
-        // Mensaje para el usuario de que algo falló
+
         Swal.fire({
           title: "Error al borrar",
           text: "El producto no fue borrado",
@@ -91,7 +91,7 @@ export default function Register() {
     try {
 
       if (selectedProduct) {
-        // HAcer un put
+
         const { id } = selectedProduct;
         const response = await axios.put(`${URL}/users/${id}`, producto);
         console.log(response.data)
@@ -106,46 +106,33 @@ export default function Register() {
 
 
       } else {
-        // si no tengo estado selectedProduct (null) significa que estoy creando un producto
+
         const response = await axios.post(`${URL}/users`, producto)
         console.log(response.data);
 
-
       }
 
-
       getProducts();
-      // setSelectedProduct(null)
 
     } catch (error) {
       console.log(error)
-      // Swal y mostrar error al user
+
     }
 
   }
 
-  // # Editar productos
-  // crear un función para obtener los datos del producto a editar
+
   function handleEditProduct(producto) {
 
     console.log("Producto a editar", producto);
     setSelectedProduct(producto);
-    // setValue("name", producto.name);
-    // setValue("price", producto.price)
 
   }
-
-
-  // rellenar el formulario con la data del producto seleccionado
-  // definir alguna forma de determinar si estamos editando o si agregando producto
-  // enviar la nueva data a nuestro backend (mockapi) con un petición a través del método PUT
-  // solicitar los productos nuevamente para poder ver las modificaciones en el prod editado
-
 
   return (
     <>
       <div className="admin-container-register">
-        {/* Contenedor del formulario */}
+
         <div className="form-container">
           <h1 className="title-register">Registro</h1>
           <form className="admin-form" onSubmit={handleSubmit(onProductSubmit)}>
@@ -258,15 +245,7 @@ export default function Register() {
           </form>
 
         </div>
-        {/* Contenedor de la tabla de productos */}
-        {/* <div className="table-container">
 
-          <AdminTable products={products}
-            deleteProduct={deleteProduct}
-            handleEditProduct={handleEditProduct}
-          />
-
-        </div> */}
       </div>
 
     </>

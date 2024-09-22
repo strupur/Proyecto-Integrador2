@@ -11,7 +11,7 @@ export default function ProductDetail() {
     const { addMasProduct } = useOrder();
 
     const [product, setProduct] = useState();
-    const [quantity, setQuantity] = useState(1);  // Estado para la cantidad seleccionada
+    const [quantity, setQuantity] = useState(1);
 
     const { id } = useParams();
 
@@ -33,21 +33,19 @@ export default function ProductDetail() {
         return <h4>⌛</h4>
     }
 
-    // Función para incrementar la cantidad
+
     const incrementQuantity = () => {
         setQuantity(prev => prev + 1);
     }
 
-    // Función para decrementar la cantidad
     const decrementQuantity = () => {
         if (quantity > 1) {
             setQuantity(prev => prev - 1);
         }
     }
 
-    // Función para agregar el producto al carrito con la cantidad seleccionada
     const handleAddToCart = () => {
-        addMasProduct({ ...product, quantity });  // Añade el producto con la cantidad seleccionada directamente
+        addMasProduct({ ...product, quantity });
     }
 
     return (
@@ -84,14 +82,14 @@ export default function ProductDetail() {
 
 
                 <div className="product-actions">
-                    {/* Controles para la cantidad */}
+
                     <div className="quantity-controls">
                         <button onClick={decrementQuantity} className="quantity-button">-</button>
                         <input
                             type="number"
                             className="quantity-input"
                             value={quantity}
-                            onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))} // Validación para no bajar de 1
+                            onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
                         />
                         <button onClick={incrementQuantity} className="quantity-button">+</button>
                     </div>

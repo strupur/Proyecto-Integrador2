@@ -67,11 +67,6 @@ export default function OrderProvider({ children }) {
 
     function removeProduct(id) {
 
-        // const indice = order.findIndex(prod => prod.id === id);
-        // const orderCopy = [...order];
-        // orderCopy.splice(indice, 1)
-        // setOrder(orderCopy)
-
         const orderFiltered = order.filter(prod => prod.id !== id)
 
         setOrder(orderFiltered)
@@ -79,17 +74,6 @@ export default function OrderProvider({ children }) {
     }
 
     function changeItemQuantity(id, value) {
-
-        // const newOrder = order.map(prod => {
-
-        // if(prod.id === id) {
-        //     prod.quantity = value;
-        // }
-
-        //     return prod;
-        // })
-
-        // setOrder(newOrder)
 
         const producto = order.find(prod => prod.id === id);
 
@@ -103,11 +87,11 @@ export default function OrderProvider({ children }) {
         const productExists = order.find(prod => prod.id === product.id);
 
         if (productExists) {
-            // Si el producto ya existe en el carrito, incrementa su cantidad en base a la cantidad seleccionada
+            
             productExists.quantity += product.quantity;
-            setOrder([...order]);  // Asegúrate de actualizar el estado para que React lo detecte
+            setOrder([...order]);  
         } else {
-            // Si el producto no existe en el carrito, añádelo con la cantidad seleccionada
+            
             setOrder([...order, { ...product }]);
         }
     }

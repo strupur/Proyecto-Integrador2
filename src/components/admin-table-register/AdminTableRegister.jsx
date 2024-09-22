@@ -1,7 +1,6 @@
 import './AdminTableRegister.css';
 import AdminRowRegister from '../admin-row-register/AdminRowRegister';
 
-
 export default function AdminTableRegister({ products, deleteProduct, handleEditProduct }) {
   return (
     <table className="admin-table">
@@ -40,17 +39,15 @@ export default function AdminTableRegister({ products, deleteProduct, handleEdit
         {
           products.map(prod => {
 
-            return <AdminRowRegister  key={prod.id} 
-                              producto={prod} 
-                              deleteProduct={deleteProduct}
-                              handleEditProduct={handleEditProduct}
-                              />
-            
+            return <AdminRowRegister key={prod.id}
+              producto={prod}
+              deleteProduct={deleteProduct}
+              handleEditProduct={handleEditProduct}
+            />
+
           })
         }
       </tbody>
-
-      
 
     </table>
   )

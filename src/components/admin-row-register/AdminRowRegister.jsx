@@ -41,16 +41,6 @@ export default function AdminRowRegister({ producto, deleteProduct, handleEditPr
 
       </td>
 
-      {/* <td className="price">
-        ${producto.price}
-      </td> */}
-
-      {/* <td className="category">
-        {producto.category}
-      </td> */}
-
-      
-
       <td className="actions">
         <div className="actions-container">
 

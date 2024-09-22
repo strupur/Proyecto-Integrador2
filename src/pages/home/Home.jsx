@@ -4,17 +4,17 @@ import ProductGallery from '../../components/product-gallery/ProductGallery'
 import './Home.css'
 
 export default function Home() {
-  return(
+  return (
 
-  <>
-    
-        <Carousel /> {/* Aquí colocas el componente del carrusel */}
-      
+    <>
 
-    <ProductGallery/>
+      <Carousel />
 
-    <Feature/>
-  </>
+      <ProductGallery />
+
+      <Feature />
+
+    </>
   )
 }
 

@@ -10,49 +10,49 @@ export default function ProductCard({ prod }) {
   const { addProduct } = useOrder();
 
   return (
-    
-      
-        <article className='product-card'>
-          <header className="card-header">
-            <img src={prod.image}
-              alt="{prod.image}"
-              className="product-image" />
 
-          </header>
-          <main className="card-body">
-            <div className="product-category">
-              {prod.category}
-            </div>
-            <h1 className="product-title">
-              {prod.name}
-            </h1>
-            <p className="product-description">
-              {prod.description}
-            </p>
 
-            <div className="product-info">
-              <div className="product-price">
-                $ <span className="price">
-                  {prod.price}
-                </span>
-              </div>
-            </div>
-          </main>
-          <footer className="card-footer">
+    <article className='product-card'>
+      <header className="card-header">
+        <img src={prod.image}
+          alt="{prod.image}"
+          className="product-image" />
 
-            <button className="product-btn" onClick={() => addProduct(prod)}>
-              <FontAwesomeIcon icon={faCartShopping} />
-            </button>
+      </header>
+      <main className="card-body">
+        <div className="product-category">
+          {prod.category}
+        </div>
+        <h1 className="product-title">
+          {prod.name}
+        </h1>
+        <p className="product-description-l">
+          {prod.description}
+        </p>
 
-            <NavLink to={`/product-detail/${prod.id}`} className="product-btn">
+        <div className="product-info">
+          <div className="product-price">
+            $ <span className="price">
+              {prod.price}
+            </span>
+          </div>
+        </div>
+      </main>
+      <footer className="card-footer">
 
-              <FontAwesomeIcon icon={faUpRightFromSquare} />
+        <button className="product-btn" onClick={() => addProduct(prod)}>
+          <FontAwesomeIcon icon={faCartShopping} />
+        </button>
 
-            </NavLink>
-          </footer>
-        </article >
-      
-    
+        <NavLink to={`/product-detail/${prod.id}`} className="product-btn">
+
+          <FontAwesomeIcon icon={faUpRightFromSquare} />
+
+        </NavLink>
+      </footer>
+    </article >
+
+
 
   )
 }
@@ -63,7 +63,7 @@ ProductCard.propTypes = {
     image: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    description: PropTypes.string,
+    description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   }).isRequired
 };
