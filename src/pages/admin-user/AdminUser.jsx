@@ -197,12 +197,12 @@ export default function AdminUser() {
 
             <div className="input-group-adminUser">
               <label htmlFor="createdAt">Fecha de ingreso</label>
-              <input type="date" {...register("createdAt")} />
+              <input type="date" {...register("createdAt", { required: true })} />
             </div>
 
             <div className="input-group-adminUser">
               <label htmlFor="">Seleccione su Pais</label>
-              <select {...register("category")}>\
+              <select {...register("category", { required: true })}>\
                 <option value=""></option>
                 <option value="Argentina">Argentina</option>
                 <option value="Bolivia">Bolivia</option>
@@ -230,7 +230,7 @@ export default function AdminUser() {
 
             <div className="input-group-adminUser">
               <label htmlFor="description">Observacíon</label>
-              <textarea {...register("description")} rows={5}></textarea>
+              <textarea {...register("description", { required: true, minLength: 3 })} rows={5}></textarea>
             </div>
 
             <button className={`btn ${selectedProduct && 'btn-success'}`}

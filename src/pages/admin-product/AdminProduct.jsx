@@ -133,7 +133,7 @@ export default function AdminProduct() {
   return (
     <>
       <div className="admin-container-adminProduct">
-        
+
         <div className="form-container">
           <h1>AdminProduct</h1>
           <form className="admin-form" onSubmit={handleSubmit(onProductSubmit)}>
@@ -151,7 +151,8 @@ export default function AdminProduct() {
 
             </div>
 
-            <div className="input-group-adminProduct">Precio
+            <div className="input-group-adminProduct">
+              Precio
               <input type="number" {...register("price", { required: true })} />
 
               {errors.price && <div className="input-error">El campo price es requerido</div>}
@@ -159,12 +160,12 @@ export default function AdminProduct() {
 
             <div className="input-group-adminProduct">
               <label htmlFor="description">Descripción</label>
-              <textarea {...register("description")} rows={5}></textarea>
+              <textarea {...register("description", { required: true })} rows={5}></textarea>
             </div>
 
             <div className="input-group-adminProduct">
               <label htmlFor="">Categoría</label>
-              <select {...register("category")}>\
+              <select {...register("category", { required: true })}>\
                 <option value="Instrumento-percusíon">Intrumento de percusíon</option>
                 <option value="Instrumento-cuerdas">Instrumento de cuerdas</option>
                 <option value="Intrumento-electronico">Intrumento electronico</option>
@@ -174,12 +175,12 @@ export default function AdminProduct() {
 
             <div className="input-group-adminProduct">
               <label htmlFor="createdAt">Fecha de ingreso</label>
-              <input type="date" {...register("createdAt")} />
+              <input type="date" {...register("createdAt", { required: true })} />
             </div>
 
             <div className="input-group-adminProduct">
               <label htmlFor="">Imagen</label>
-              <input type="url" {...register("image")} />
+              <input type="url" {...register("image", { required: true })} />
             </div>
 
             <button className={`btn ${selectedProduct && 'btn-success'}`}
@@ -194,7 +195,7 @@ export default function AdminProduct() {
 
           </form>
         </div>
-        
+
         <div className="table-container">
 
           <AdminTable products={products}

@@ -46,7 +46,7 @@ export default function Contact() {
                         className="app-map"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7088.0724856236!2d-71.52611103874861!3d-33.02688740688216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689de84ead41255%3A0x8e5fde76df3d413f!2zVmnDsWEgZGVsIE1hciwgVmFscGFyYcOtc28!5e0!3m2!1ses!2scl!4v1715636781369!5m2!1ses!2scl"
                         width="600"
-                        height="450"
+                        height="536"
                         style={{ border: "0" }}
                         allowFullScreen=""
                         loading="lazy"
