@@ -196,7 +196,7 @@ export default function AdminUser() {
             </div>
 
             <div className="input-group-adminUser">
-              <label htmlFor="createdAt">Fecha de ingreso</label>
+              <label htmlFor="createdAt">Fecha de Nacimiento</label>
               <input type="date" {...register("createdAt", { required: true })} />
             </div>
 

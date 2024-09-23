@@ -195,7 +195,7 @@ export default function Register() {
             </div>
 
             <div className="input-group-register">
-              <label htmlFor="createdAt">Fecha de ingreso</label>
+              <label htmlFor="createdAt">Fecha de Nacimiento</label>
               <input type="date" {...register("createdAt")} />
             </div>
 

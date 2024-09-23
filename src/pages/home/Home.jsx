@@ -6,7 +6,7 @@ import './Home.css'
 export default function Home() {
   return (
 
-    <>
+    <div className='contenedor-home'>
 
       <Carousel />
 
@@ -14,7 +14,7 @@ export default function Home() {
 
       <Feature />
 
-    </>
+    </div>
   )
 }
 

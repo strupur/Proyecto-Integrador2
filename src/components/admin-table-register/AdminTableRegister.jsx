@@ -22,16 +22,16 @@ export default function AdminTableRegister({ products, deleteProduct, handleEdit
             Repetir Contraseña
           </th>
           <th>
-            Fecha de ingreso
+            Fecha de Nacimiento
           </th>
           <th>
-            seccion de Pais
+            País
           </th>
           <th>
-            Observacion
+            Observacíon
           </th>
           <th>
-            Accion
+            Accíon
           </th>
         </tr>
       </thead>

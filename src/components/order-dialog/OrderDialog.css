@@ -73,6 +73,7 @@
             border-radius: .25rem;
             width: 131px;
             margin-right: 10px;
+            
 
             &.btn-cerrar {
                 background-color: rgb(176, 4, 1);
@@ -93,5 +94,35 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* ====== SECCION Order en MOVIL====== */
+
+@media screen and (width <=500px) {
+
+    .modal-content {
+        width: calc(100% - 3rem); 
+        max-width: none; 
+        padding: 1rem; 
+        transform: translateY(0); 
+        border-radius: 0.5rem; 
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+        
+        .btn {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0rem;
+            color: white;
+            background-color: crimson;
+            outline: none;
+            border: none;
+            padding: 0rem;
+            font-size: 1rem;
+            border-radius: .25rem;
+            width: 31px;
+            margin-right: 40px;
+        }
+        
     }
 }

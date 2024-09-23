@@ -26,7 +26,7 @@ export default function Header() {
           <NavLink to="/admin-product" className="link-header">Admin Productos</NavLink>
           <NavLink to="/register" className="link-header">Registro</NavLink>
           <NavLink to="/acerca-de-nosotros" className="link-header">Acerca de nosotros</NavLink>
-          <NavLink to="/admin-user" className="link-header">Admin User</NavLink>
+          <NavLink to="/admin-user" className="link-header">Admin Usuario</NavLink>
 
 
 
