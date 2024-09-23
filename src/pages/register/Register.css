@@ -93,6 +93,13 @@
 
     @media screen and (width < 900px) {
 
+        .title-register {
+            align-items: center;
+            margin-left: 90px;
+            color: rgb(58, 58, 252);
+            font-weight: 600;
+            font-family: fantasy;
+        }
         flex-direction: column;
 
         .form-container {

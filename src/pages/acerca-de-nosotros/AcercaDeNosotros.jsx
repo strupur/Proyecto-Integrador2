@@ -4,7 +4,7 @@ export default function AcercaDeNosotros() {
     return (
         <main className="contenedor-main">
             <div className="div-titulo-h1">
-                <h1 className="titulo-h1">SOBRE NOSOTROS</h1>
+                <h1 className="titulo-h1-l">SOBRE NOSOTROS</h1>
             </div>
 
             <div className="div-parrafo">
@@ -18,7 +18,7 @@ export default function AcercaDeNosotros() {
             </div>
 
             <div className="div-titulo-h1">
-                <h1 className="titulo-h1">DESARROLLADOR WEB</h1>
+                <h1 className="titulo-h1-l">DESARROLLADOR WEB</h1>
             </div>
 
             <div className="div-presentacion">
