@@ -17,10 +17,10 @@ export default function OrderItem({ item }) {
                 {item.name}
             </div>
             <div className='item-price'>
-                $ {item.price}
+                ${item.price}
             </div>
             <div className='item-subtotal'>
-                $ {item.price * item.quantity}
+                ${item.price * item.quantity}
             </div>
             <div className="item-count">
                 <input
