@@ -67,7 +67,6 @@
     flex-wrap: wrap;
     margin-top: 20px;
     
-  
 }
 
 @media screen and (width <=750px) {
@@ -79,6 +78,8 @@
     border-collapse: none;
     box-sizing: border-box;
     overflow-x: hidden;
+
+    
 }
 
 .gallery-title {

@@ -14,17 +14,6 @@ body {
     position: relative;
 }
 
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(/pages/assets/image/musica-tema-notas-blancas-sobre-fondo-negro-t108hw.jpg);
-    opacity: 0.3;
-    z-index: -1;
-}
 
 /* ====== MAIN ====== */
 
@@ -40,7 +29,7 @@ body::before {
     margin-top: 115px;
 }
 
-.titulo-h1 {
+.titulo-h1-l {
     color: transparent;
     background-image: linear-gradient(180deg, rgb(0, 0, 255), rgb(0, 235, 243));
     background-size: 100%;
