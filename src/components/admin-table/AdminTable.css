@@ -21,10 +21,4 @@
     
 }
 
-@media screen and (width < 500px) {
-    .admin-table-row {
-        overflow-x: auto;
-        border-collapse: collapse;
-        
-    }
-}
+

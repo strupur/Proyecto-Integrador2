@@ -11,10 +11,12 @@
     background-color: rgb(141, 210, 210);
     width: 400px;
     margin: 0;
+    padding: 10px;
 }
 
 .img {
     width: 100%;
+    
 }
 
 .product-image {
@@ -28,7 +30,7 @@
     align-items: center;
     justify-content: center;
     font-size: 50px;
-    margin-bottom: 50px;
+    margin: 50px 0px 50px 0px;
     
 }
 
@@ -49,14 +51,20 @@
     justify-content: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(50, 50, 50);
-    font-size: 20px
+    font-size: 20px;
+    margin: 0px 20px 0px 20px;
+}
+
+.product-created {
+    margin-top: 20px;
 }
 
 .product-category {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 15px;
+    flex-wrap: wrap;
+    margin: 15px 35px 0px 35px;
 }
 
 .product-actions {
@@ -104,3 +112,36 @@
     font-weight: 600;
   }
   
+  /* SECCION PRODUCT DETAIL */
+
+  @media screen and (width < 900px) {
+    .product-detail-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin: 120px 40px 0px 40px;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .product-content-img {
+        background-color: rgb(141, 210, 210);
+        width:100%;
+        margin: 0;
+        box-sizing: border-box;
+        
+    }
+
+    .img {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .product-category {
+        font-size: 12px;
+    }
+
+    .product-created {
+        font-size: 15px;
+    }
+}
