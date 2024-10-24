@@ -2,15 +2,19 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form"
 import AdminTableRegister from "../../components/admin-table-register/AdminTableRegister";
-
 import './AdminUser.css';
 import Swal from "sweetalert2";
+import { useUser } from "../../context/UserContext";
 
-const URL = "https://66da9325f47a05d55be52fee.mockapi.io/api/v1";
+// const URL = "https://66da9325f47a05d55be52fee.mockapi.io/api/v1";
+
+const URL2 = import.meta.env.VITE_LOCAL_SERVER;
 
 
 export default function AdminUser() {
   const [products, setProducts] = useState([]);
+
+  const { token, logout } = useUser();
 
   const [selectedProduct, setSelectedProduct] = useState(null)
 
@@ -43,13 +47,24 @@ export default function AdminUser() {
 
     try {
 
-      const response = await axios.get(`${URL}/users`);
+      const response = await axios.get(`${URL2}/users`, {
+        headers: {
+          Authorization: token
+        }
+
+      });
 
       console.log(response.data);
 
       setProducts(response.data)
 
     } catch (error) {
+      if (error.reponse.status === 401) {
+        alert("Usuario no autorizado");
+        logout();
+        return;
+      }
+      alert("Error al obtener usuario");
       console.log(error);
 
     }
@@ -68,7 +83,7 @@ export default function AdminUser() {
     }).then(async (result) => {
       try {
         if (result.isConfirmed) {
-          const response = await axios.delete(`${URL}/users/${identificador}`);
+          const response = await axios.delete(`${URL2}/users/${identificador}`);
 
           console.log(response.data);
 
@@ -94,7 +109,7 @@ export default function AdminUser() {
       if (selectedProduct) {
 
         const { id } = selectedProduct;
-        const response = await axios.put(`${URL}/users/${id}`, producto);
+        const response = await axios.put(`${URL2}/users/${id}`, producto);
         console.log(response.data)
         Swal.fire({
           title: "Actualización correcta",
@@ -108,7 +123,7 @@ export default function AdminUser() {
 
       } else {
 
-        const response = await axios.post(`${URL}/users`, producto)
+        const response = await axios.post(`${URL2}/users`, producto)
         console.log(response.data);
       }
 

@@ -4,10 +4,13 @@ import { NavLink } from "react-router-dom";
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import userImg from '../../assets/image/OIF.jpg'
 import { useOrder } from '../../context/OrderContext';
+import { useUser } from '../../context/UserContext';
 
 export default function Header() {
 
   const { setToggleModal, count } = useOrder()
+
+  const { user, logout } = useUser()
 
   return (
     <>
@@ -23,12 +26,24 @@ export default function Header() {
         <nav className="main-nav">
           <NavLink to="/" className="link-header">Principal</NavLink>
           <NavLink to="/contact" className="link-header">Contacto</NavLink>
-          <NavLink to="/admin-product" className="link-header">Admin Productos</NavLink>
           <NavLink to="/register" className="link-header">Registro</NavLink>
           <NavLink to="/acerca-de-nosotros" className="link-header">Acerca de nosotros</NavLink>
-          <NavLink to="/admin-user" className="link-header">Admin Usuario</NavLink>
 
+          {
+            user?.role === "admin" &&
+            (<NavLink to="/admin-product" className="link-header">Admin Productos</NavLink>)
+          }
 
+          {
+            user?.role === "admin" &&
+            (<NavLink to="/admin-user" className="link-header">Admin Usuario</NavLink>)
+          }
+
+          {
+            user ? (<NavLink  className="link-header" onClick={logout}>Logout</NavLink>)
+              :
+              (<NavLink to="/login" className="link-header">Login</NavLink>)
+          }
 
         </nav>
 
@@ -40,15 +55,20 @@ export default function Header() {
           </label>
 
           <span className="ocultar-span">
-            Francisco
+            {/* Francisco */}
           </span>
           <div className="div-logo-head2">
             <i className="fa-solid fa-guitar"><span className="logo-music-head2">MUSIC </span></i>
           </div>
 
           <div className='user'>
+            {user?.name || "NO USER"}
+
             <div className='order'>
+
               <div className='order-count'>{count}</div>
+
+
               <FontAwesomeIcon icon={faCartShopping}
                 onClick={() => setToggleModal((estado) => !estado)} />
             </div>

@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 import AdminTable from "../../components/admin-table/AdminTable";
 
 import './AdminProduct.css';
 import Swal from "sweetalert2";
 
-const URL = "https://66da9325f47a05d55be52fee.mockapi.io/api/v1";
+// const URL = "https://66da9325f47a05d55be52fee.mockapi.io/api/v1";
+
+const URL2 = import.meta.env.VITE_LOCAL_SERVER;
 
 
 export default function AdminProduct() {
@@ -42,11 +44,11 @@ export default function AdminProduct() {
 
     try {
 
-      const response = await axios.get(`${URL}/products`);
+      const response = await axios.get(`${URL2}/products`);
 
       console.log(response.data);
 
-      setProducts(response.data)
+      setProducts(response.data.products)
 
     } catch (error) {
       console.log(error);
@@ -67,7 +69,7 @@ export default function AdminProduct() {
     }).then(async (result) => {
       try {
         if (result.isConfirmed) {
-          const response = await axios.delete(`${URL}/products/${identificador}`);
+          const response = await axios.delete(`${URL2}/products/${identificador}`);
 
           console.log(response.data);
 
@@ -93,7 +95,7 @@ export default function AdminProduct() {
       if (selectedProduct) {
 
         const { id } = selectedProduct;
-        const response = await axios.put(`${URL}/products/${id}`, producto);
+        const response = await axios.put(`${URL2}/products/${id}`, producto);
         console.log(response.data)
         Swal.fire({
           title: "Actualización correcta",
@@ -107,7 +109,7 @@ export default function AdminProduct() {
 
       } else {
 
-        const response = await axios.post(`${URL}/products`, producto)
+        const response = await axios.post(`${URL2}/products`, producto)
         console.log(response.data);
 
 
