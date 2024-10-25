@@ -37,7 +37,7 @@ export default function AdminRow({ producto, deleteProduct, handleEditProduct })
           </button>
 
 
-          <button className="btn btn-danger" onClick={() => deleteProduct(producto.id)}>
+          <button className="btn btn-danger" onClick={() => deleteProduct(producto._id)}>
 
             <FontAwesomeIcon className='btn-danger' icon={faTrash}></FontAwesomeIcon>
 

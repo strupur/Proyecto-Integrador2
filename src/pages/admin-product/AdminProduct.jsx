@@ -69,6 +69,7 @@ export default function AdminProduct() {
     }).then(async (result) => {
       try {
         if (result.isConfirmed) {
+          
           const response = await axios.delete(`${URL2}/products/${identificador}`);
 
           console.log(response.data);
@@ -94,9 +95,9 @@ export default function AdminProduct() {
 
       if (selectedProduct) {
 
-        const { id } = selectedProduct;
-        const response = await axios.put(`${URL2}/products/${id}`, producto);
-        console.log(response.data)
+        const { _id } = selectedProduct;
+        const response = await axios.put(`${URL2}/products/${_id}`, producto);
+        console.log(response.data.products)
         Swal.fire({
           title: "Actualización correcta",
           text: "El producto fue actualizado correctamente",

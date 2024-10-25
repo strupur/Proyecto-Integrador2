@@ -44,7 +44,7 @@ export default function ProductCard({ prod }) {
           <FontAwesomeIcon icon={faCartShopping} />
         </button>
 
-        <NavLink to={`/product-detail/${prod.id}`} className="product-btn">
+        <NavLink to={`/product-detail/${prod._id}`} className="product-btn">
 
           <FontAwesomeIcon icon={faUpRightFromSquare} />
 
@@ -59,7 +59,7 @@ export default function ProductCard({ prod }) {
 
 ProductCard.propTypes = {
   prod: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    _id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
