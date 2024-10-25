@@ -39,7 +39,7 @@ export default function AdminTableRegister({ products, deleteProduct, handleEdit
         {
           products.map(prod => {
 
-            return <AdminRowRegister key={prod.id}
+            return <AdminRowRegister key={prod._id}
               producto={prod}
               deleteProduct={deleteProduct}
               handleEditProduct={handleEditProduct}

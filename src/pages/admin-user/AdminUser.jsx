@@ -34,6 +34,7 @@ export default function AdminUser() {
         setValue("image", selectedProduct.image),
         setValue("category", selectedProduct.category),
         setValue("createdAt", selectedProduct.createdAt)
+        setValue("repeatpass", selectedProduct.repeatpass)
 
     } else {
       reset()
@@ -108,9 +109,9 @@ export default function AdminUser() {
 
       if (selectedProduct) {
 
-        const { id } = selectedProduct;
-        const response = await axios.put(`${URL2}/users/${id}`, producto);
-        console.log(response.data)
+        const { _id } = selectedProduct;
+        const response = await axios.put(`${URL2}/users/${_id}`, producto);
+        console.log(response.data.products)
         Swal.fire({
           title: "Actualización correcta",
           text: "El usuario fue actualizado correctamente",
@@ -124,7 +125,7 @@ export default function AdminUser() {
       } else {
 
         const response = await axios.post(`${URL2}/users`, producto)
-        console.log(response.data);
+        console.log(response.data.products);
       }
 
       getProducts();
