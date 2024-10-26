@@ -29,12 +29,14 @@ export default function AdminUser() {
     if (selectedProduct) {
 
       setValue("name", selectedProduct.name),
-        setValue("price", selectedProduct.price),
         setValue("description", selectedProduct.description),
+        setValue("email", selectedProduct.email),
+        setValue("password", selectedProduct.password),
+        setValue("repeatpass", selectedProduct.repeatpass),
         setValue("image", selectedProduct.image),
         setValue("category", selectedProduct.category),
-        setValue("createdAt", selectedProduct.createdAt)
-        setValue("repeatpass", selectedProduct.repeatpass)
+        setValue("date", selectedProduct.createdAt)
+        
 
     } else {
       reset()
@@ -111,7 +113,7 @@ export default function AdminUser() {
 
         const { _id } = selectedProduct;
         const response = await axios.put(`${URL2}/users/${_id}`, producto);
-        console.log(response.data.products)
+        console.log(response.data.users)
         Swal.fire({
           title: "Actualización correcta",
           text: "El usuario fue actualizado correctamente",
@@ -275,3 +277,5 @@ export default function AdminUser() {
     </>
   )
 }
+
+//gatito
