@@ -86,7 +86,11 @@ export default function AdminUser() {
     }).then(async (result) => {
       try {
         if (result.isConfirmed) {
-          const response = await axios.delete(`${URL2}/users/${identificador}`);
+          const response = await axios.delete(`${URL2}/users/${identificador}`, {
+            headers: {
+              Authorization: token
+            }
+          });
 
           console.log(response.data);
 
@@ -112,7 +116,9 @@ export default function AdminUser() {
       if (selectedProduct) {
 
         const { _id } = selectedProduct;
-        const response = await axios.put(`${URL2}/users/${_id}`, producto);
+        const response = await axios.put(`${URL2}/users/${_id}`, producto,{headers: {
+          Authorization: token
+        }});
         console.log(response.data.users)
         Swal.fire({
           title: "Actualización correcta",
@@ -278,4 +284,4 @@ export default function AdminUser() {
   )
 }
 
-//gatito
+
