@@ -14,12 +14,14 @@ const URL2 = import.meta.env.VITE_LOCAL_SERVER;
 export default function AdminProduct() {
   const [products, setProducts] = useState([]);
 
-  const [selectedProduct, setSelectedProduct] = useState(null)
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [categories, setCategories] = useState([])
 
   const { register, setValue, reset, handleSubmit, formState: { errors, isValid } } = useForm();
 
   useEffect(() => {
     getProducts();
+    getCategories();
   }, [])
 
   useEffect(() => {
@@ -38,6 +40,22 @@ export default function AdminProduct() {
     }
 
   }, [selectedProduct, setValue, reset])
+
+  async function getCategories() {
+    try {
+
+      const response = await axios.get(`${URL2}/categories`);
+
+      console.log(response.data);
+
+      setCategories(response.data.categories)
+      
+    } catch (error) {
+      console.log(error);
+      alert("No se pudieron cargar las categorias")
+    }
+    
+  }
 
 
   async function getProducts() {
@@ -169,10 +187,11 @@ export default function AdminProduct() {
             <div className="input-group-adminProduct">
               <label htmlFor="">Categoría</label>
               <select {...register("category", { required: true })}>\
-                <option value="Instrumento-percusíon">Intrumento de percusíon</option>
-                <option value="Instrumento-cuerdas">Instrumento de cuerdas</option>
-                <option value="Intrumento-electronico">Intrumento electronico</option>
-                <option value="Intrumento-viento">Intrumento de viento</option>
+                {
+                  categories.map(cat => (
+                    <option key={cat._id} value={cat.name}>{cat.viewValue}</option>
+                  ))
+                }
               </select>
             </div>
 

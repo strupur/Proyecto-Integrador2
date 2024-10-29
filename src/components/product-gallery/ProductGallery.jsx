@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ProductCard from '../product-card/ProductCard';
 import './ProductGallery.css';
 import axios from 'axios';
+import Pagination from '../pagination/Pagination';
 // import Pagination from '../pagination/Pagination';
 
 // const URL = import.meta.env.VITE_SERVER_URL;
@@ -48,7 +49,7 @@ export default function ProductGallery() {
                 }
             </div>
 
-            {/* <Pagination total={7} limit={3} getFn={getProducts}/> */}
+           {/* <Pagination total={7} limit={3} getFn={getProducts}/>  */}
 
         </section>
 

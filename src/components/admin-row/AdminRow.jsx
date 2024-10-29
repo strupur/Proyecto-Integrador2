@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './AdminRow.css';
 import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { formatDate } from '../../utils/formatDate';
 
 export default function AdminRow({ producto, deleteProduct, handleEditProduct }) {
   return (
@@ -25,7 +26,7 @@ export default function AdminRow({ producto, deleteProduct, handleEditProduct })
         {producto.category}
       </td>
       <td className="date">
-        {producto.createdAt}
+        { formatDate(producto.createdAt) }
       </td>
       <td className="actions">
         <div className="actions-container">
