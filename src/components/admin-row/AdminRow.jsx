@@ -3,11 +3,13 @@ import './AdminRow.css';
 import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { formatDate } from '../../utils/formatDate';
 
+const URL2 = import.meta.env.VITE_LOCAL_SERVER
+
 export default function AdminRow({ producto, deleteProduct, handleEditProduct }) {
   return (
     <tr className="admin-table-row">
       <td className="image">
-        <img src={producto.image} alt={producto.name} />
+        <img src={`${URL2}/images/products/${producto.image}`} alt={producto.name} />
       </td>
       <td className="name">
         {producto.name}

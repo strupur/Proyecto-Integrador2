@@ -108,14 +108,25 @@ export default function AdminProduct() {
   }
 
   async function onProductSubmit(producto) {
-    console.log(producto)
+    
     try {
+
+      const formData = new FormData();
+      formData.append("name", producto.name);
+      formData.append("price", producto.price);
+      formData.append("description", producto.description);
+      formData.append("category", producto.category);
+
+      if(producto.image[0]) {
+        formData.append("image", producto.image[0])
+      }
+
 
       if (selectedProduct) {
 
         const { _id } = selectedProduct;
-        const response = await axios.put(`${URL2}/products/${_id}`, producto);
-        console.log(response.data.products)
+        const response = await axios.put(`${URL2}/products/${_id}`, formData);
+        console.log(response.data)
         Swal.fire({
           title: "Actualización correcta",
           text: "El producto fue actualizado correctamente",
@@ -128,7 +139,7 @@ export default function AdminProduct() {
 
       } else {
 
-        const response = await axios.post(`${URL2}/products`, producto)
+        const response = await axios.post(`${URL2}/products`, formData)
         console.log(response.data);
 
 
@@ -202,7 +213,7 @@ export default function AdminProduct() {
 
             <div className="input-group-adminProduct">
               <label htmlFor="">Imagen</label>
-              <input type="url" {...register("image", { required: true })} />
+              <input accept="image/*" type="file" {...register("image", { required: true })} />
             </div>
 
             <button className={`btn ${selectedProduct && 'btn-success'}`}

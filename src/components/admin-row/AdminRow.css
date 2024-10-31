@@ -11,6 +11,7 @@
 
     .name {
         font-weight: 600;
+        text-transform: capitalize;
         color: rgb(0, 110, 255);
     }
 
