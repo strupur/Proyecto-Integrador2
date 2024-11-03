@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useOrder } from '../../context/OrderContext';
 
-const URL = import.meta.env.VITE_SERVER_URL;
+const URL2 = import.meta.env.VITE_LOCAL_SERVER;
 
 export default function ProductDetail() {
 
@@ -21,7 +21,7 @@ export default function ProductDetail() {
 
     async function getProduct() {
         try {
-            const response = await axios.get(`${URL}/products/${id}`)
+            const response = await axios.get(`${URL2}/products/${id}`)
             setProduct(response.data);
         } catch (error) {
             alert("Error al obtener el producto");

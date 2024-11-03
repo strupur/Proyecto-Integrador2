@@ -3,6 +3,8 @@ import './OrderItem.css'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useOrder } from '../../context/OrderContext'
 
+const URL2 = import.meta.env.VITE_LOCAL_SERVER;
+
 export default function OrderItem({ item }) {
 
     const { removeProduct, changeItemQuantity } = useOrder()
@@ -11,7 +13,7 @@ export default function OrderItem({ item }) {
 
         <li className='order-item'>
             <div className='item-imagen'>
-                <img src={item.image} alt="" />
+                <img src={`${URL2}/images/products/${item.image}`} alt="" />
             </div>
             <div className='item-info'>
                 {item.name}
@@ -28,11 +30,11 @@ export default function OrderItem({ item }) {
                     type="number"
                     defaultValue={item.quantity}
                     min="1"
-                    onChange={(evt) => changeItemQuantity(item.id, evt.target.valueAsNumber)} />
+                    onChange={(evt) => changeItemQuantity(item._id, evt.target.valueAsNumber)} />
 
             </div>
             <div className="item-actions">
-                <button className='btn-icon btn-danger' onClick={() => removeProduct(item.id)}>
+                <button className='btn-icon btn-danger' onClick={() => removeProduct(item._id)}>
 
                     <FontAwesomeIcon icon={faTrash} />
                 </button>
