@@ -118,7 +118,8 @@ export default function AdminProduct() {
       formData.append("category", producto.category);
 
       if(producto.image[0]) {
-        formData.append("image", producto.image[0])
+        formData.append("image", producto.image[0]);
+        //formData.append("imageFile", producto.image[0]);
       }
 
 
