@@ -62,7 +62,7 @@ export default function AdminProduct() {
 
     try {
 
-      const response = await axios.get(`${URL2}/products`);
+      const response = await axios.get(`${URL2}/api/productos`);
 
       console.log(response.data);
 
@@ -88,7 +88,7 @@ export default function AdminProduct() {
       try {
         if (result.isConfirmed) {
           
-          const response = await axios.delete(`${URL2}/products/${identificador}`);
+          const response = await axios.delete(`${URL2}/api/productos/${identificador}`);
 
           console.log(response.data);
 
@@ -126,7 +126,7 @@ export default function AdminProduct() {
       if (selectedProduct) {
 
         const { _id } = selectedProduct;
-        const response = await axios.put(`${URL2}/products/${_id}`, formData);
+        const response = await axios.put(`${URL2}/api/productos/${_id}`, formData);
         console.log(response.data)
         Swal.fire({
           title: "Actualización correcta",
@@ -140,7 +140,7 @@ export default function AdminProduct() {
 
       } else {
 
-        const response = await axios.post(`${URL2}/products`, formData)
+        const response = await axios.post(`${URL2}/api/productos`, formData)
         console.log(response.data);
 
 
