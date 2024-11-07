@@ -25,7 +25,7 @@ export default function ProductGallery() {
 
         try {
 
-            const response = await axios.get(`${URL2}/products`)
+            const response = await axios.get(`${URL2}/api/productos`)
 
             console.log(response);
             

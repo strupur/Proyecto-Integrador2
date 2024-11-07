@@ -21,8 +21,8 @@ export default function ProductDetail() {
 
     async function getProduct() {
         try {
-            const response = await axios.get(`${URL2}/products/${id}`)
-            setProduct(response.data);
+            const response = await axios.get(`${URL2}/products/${ id } `)
+            setProduct(response.data.product);
         } catch (error) {
             alert("Error al obtener el producto");
             console.log(error);
@@ -52,7 +52,8 @@ export default function ProductDetail() {
         <div className="product-detail-container">
             <div className="product-content-img">
                 <img
-                    src={product?.image}
+                    src={`${URL2}/images/products/${product?.image}`}
+                    // src={product?.image}
                     alt={product?.name}
                     className="product-image"
                 />
