@@ -113,6 +113,17 @@ export default function AdminUser() {
     console.log(producto)
     try {
 
+      const formData = new FormData();
+      formData.append("name", producto.name);
+      formData.append("price", producto.price);
+      formData.append("description", producto.description);
+      formData.append("category", producto.category);
+
+      if(producto.image[0]) {
+        formData.append("image", producto.image[0]);
+        //formData.append("imageFile", producto.image[0]);
+      }
+
       if (selectedProduct) {
 
         const { _id } = selectedProduct;
@@ -164,6 +175,7 @@ export default function AdminUser() {
 
             <div className="input-group-adminUser">
               <label htmlFor="">Imagen</label>
+              
               <input type="url" {...register("image")} />
             </div>
 

@@ -3,10 +3,13 @@ import './AdminRowRegister.css';
 import {  faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { formatDate } from '../../utils/formatDate';
 
+const URL2 = import.meta.env.VITE_LOCAL_SERVER
+
 export default function AdminRowRegister({ producto, deleteProduct, handleEditProduct }) {
   return (
     <tr className="admin-table-row">
       <td className="image">
+      
         <img src={producto.image} alt={producto.name} />
       </td>
 
@@ -18,13 +21,13 @@ export default function AdminRowRegister({ producto, deleteProduct, handleEditPr
         {producto.email}
       </td>
 
-      <td className="password">
+      {/* <td className="password">
         {producto.password}
       </td>
 
       <td className="repeatpass">
         {producto.repeatpass}
-      </td>
+      </td> */}
 
       <td className="date">
       { formatDate(producto.createdAt) }

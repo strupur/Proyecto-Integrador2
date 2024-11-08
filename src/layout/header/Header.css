@@ -124,6 +124,7 @@
     justify-content: space-between;
     gap: 1rem;
     padding: 0 1rem;
+    white-space: nowrap;
     
     .avatar {
         display: flex;

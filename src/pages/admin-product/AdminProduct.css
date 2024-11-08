@@ -15,7 +15,7 @@
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
         border-radius: 5px;
-        background-color: #222;
+        background-color: #f20f0f;
         transition: border-color .3s;
         color: #999;
 
@@ -28,8 +28,9 @@
         display: flex;
         flex-direction: column;
         gap: .25rem;
-        color: rgb(74, 181, 253);
+        color: rgb(28, 22, 208);
         font-weight: 700;
+        border-radius: 17px;
     }
 
     .input-error {
@@ -56,7 +57,7 @@
         }
 
         &:disabled {
-            background-color: #333;
+            background-color: #000000;
             color: #666;
             pointer-events: none;
         }
