@@ -21,7 +21,7 @@ export default function ProductDetail() {
 
     async function getProduct() {
         try {
-            const response = await axios.get(`${URL2}/products/${ id } `)
+            const response = await axios.get(`${URL2}/api/productos/${ id } `)
             setProduct(response.data.product);
         } catch (error) {
             alert("Error al obtener el producto");

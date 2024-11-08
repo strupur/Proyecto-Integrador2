@@ -50,7 +50,7 @@ export default function AdminUser() {
 
     try {
 
-      const response = await axios.get(`${URL2}/users`, {
+      const response = await axios.get(`${URL2}/api/users`, {
         headers: {
           Authorization: token
         }
@@ -86,7 +86,7 @@ export default function AdminUser() {
     }).then(async (result) => {
       try {
         if (result.isConfirmed) {
-          const response = await axios.delete(`${URL2}/users/${identificador}`, {
+          const response = await axios.delete(`${URL2}/api/users/${identificador}`, {
             headers: {
               Authorization: token
             }
@@ -116,7 +116,7 @@ export default function AdminUser() {
       if (selectedProduct) {
 
         const { _id } = selectedProduct;
-        const response = await axios.put(`${URL2}/users/${_id}`, producto,{headers: {
+        const response = await axios.put(`${URL2}/api/users/${_id}`, producto,{headers: {
           Authorization: token
         }});
         console.log(response.data.users)
@@ -132,7 +132,7 @@ export default function AdminUser() {
 
       } else {
 
-        const response = await axios.post(`${URL2}/users`, producto)
+        const response = await axios.post(`${URL2}/api/users`, producto)
         console.log(response.data.products);
       }
 
