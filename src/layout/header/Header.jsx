@@ -69,7 +69,7 @@ export default function Header() {
               <div className='order-count'>{count}</div>
 
 
-              <FontAwesomeIcon icon={faCartShopping}
+              <FontAwesomeIcon className='carrito-header' icon={faCartShopping}
                 onClick={() => setToggleModal((estado) => !estado)} />
             </div>
             <div className='avatar'>

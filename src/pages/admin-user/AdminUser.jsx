@@ -143,9 +143,18 @@ export default function AdminUser() {
 
       } else {
 
-        const response = await axios.post(`${URL2}/api/users`, producto)
+        const response = await axios.post(`${URL2}/api/users`, producto ,{headers: {
+          Authorization: token
+        }})
         console.log(response.data.products);
       }
+
+      Swal.fire({
+        title: "Usuario creado",
+        text: "El usuario fue creado correctamente",
+        icon: "success",
+        timer: 1500
+      })
 
       getProducts();
 
@@ -221,7 +230,7 @@ export default function AdminUser() {
             <div className="input-group-adminUser">
               <label htmlFor="repeatpass">Repetir Contraseña</label>
 
-              <input type="repeatpass" id="repeatpass"
+              <input type="password" id="repeatpass"
                 {...register("repeatpass", { required: true, minLength: 3 })
                 } />
 

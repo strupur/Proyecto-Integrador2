@@ -1,12 +1,11 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-image: linear-gradient(to bottom, rgb(183, 183, 182), rgb(253, 253, 254));
   padding: 16px;
   border-radius: 8px;
-  width: calc((100vw/3) - 3rem);
+  width: calc((100vw/4) - 1rem);
   border: 1px solid transparent;
   transition: margin 0.3s, border 0.3s, box-shadow 0.3s;
 }
@@ -89,16 +88,16 @@
 
 
 .card-footer {
-  display: flex;
-  justify-content: space-between;
+  display: flex; 
+  justify-content: space-between; 
   padding: 1rem;
   background-color: #f8f9fa;
   border-top: 1px solid #ddd;
+  
 }
 
 
 .product-btn {
-
   background-color: crimson;
   color: white;
   border: none;
@@ -107,8 +106,6 @@
   border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-right: 150px;
-  margin-left: 150px;
 }
 
 .product-btn:hover {
@@ -132,7 +129,7 @@
 
 @media screen and (width <=750px) {
   .product-card {
-    width: 100%;
+    width: 230px;
     min-width: 100%;
     margin: 0px 10px 0px 10px;
   }
@@ -140,4 +137,5 @@
   .contenedor-cards {
     padding: 20px 20px 0px;
   }
+
 }

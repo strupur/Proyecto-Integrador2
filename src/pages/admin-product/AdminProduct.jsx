@@ -5,6 +5,7 @@ import AdminTable from "../../components/admin-table/AdminTable";
 
 import './AdminProduct.css';
 import Swal from "sweetalert2";
+import { useUser } from "../../context/UserContext";
 
 // const URL = "https://66da9325f47a05d55be52fee.mockapi.io/api/v1";
 
@@ -13,7 +14,7 @@ const URL2 = import.meta.env.VITE_LOCAL_SERVER;
 
 export default function AdminProduct() {
   const [products, setProducts] = useState([]);
-
+  const { token, logout } = useUser();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [categories, setCategories] = useState([])
 
@@ -88,7 +89,11 @@ export default function AdminProduct() {
       try {
         if (result.isConfirmed) {
           
-          const response = await axios.delete(`${URL2}/api/productos/${identificador}`);
+          const response = await axios.delete(`${URL2}/api/productos/${identificador}`, {
+            headers: {
+              Authorization: token
+            }
+          });
 
           console.log(response.data);
 
@@ -126,7 +131,9 @@ export default function AdminProduct() {
       if (selectedProduct) {
 
         const { _id } = selectedProduct;
-        const response = await axios.put(`${URL2}/api/productos/${_id}`, formData);
+        const response = await axios.put(`${URL2}/api/productos/${_id}`, formData ,{headers: {
+          Authorization: token
+        }});
         console.log(response.data)
         Swal.fire({
           title: "Actualización correcta",
@@ -140,15 +147,24 @@ export default function AdminProduct() {
 
       } else {
 
-        const response = await axios.post(`${URL2}/api/productos`, formData)
+        const response = await axios.post(`${URL2}/api/productos`, formData ,{headers: {
+          Authorization: token
+        }})
         console.log(response.data);
 
 
       }
 
+      Swal.fire({
+        title: "Producto creado",
+        text: "El producto fue creado correctamente",
+        icon: "success",
+        timer: 1500
+      })
+
       getProducts();
 
-    } catch (error) {
+    } catch (error) { 
       console.log(error)
 
     }

@@ -3,7 +3,7 @@ import './AdminRowRegister.css';
 import {  faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { formatDate } from '../../utils/formatDate';
 
-const URL2 = import.meta.env.VITE_LOCAL_SERVER
+// const URL2 = import.meta.env.VITE_LOCAL_SERVER
 
 export default function AdminRowRegister({ producto, deleteProduct, handleEditProduct }) {
   return (
