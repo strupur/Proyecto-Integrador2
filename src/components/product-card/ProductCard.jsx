@@ -28,9 +28,18 @@ export default function ProductCard({ prod }) {
         <h1 className="product-title">
           {prod.name}
         </h1>
-        <p className="product-description-l">
-          {prod.description}
-        </p>
+
+        <td className="description">
+          <div
+            className="description-container"
+            data-full-text={prod.description}
+            title={prod.description}
+          >
+            {prod.description}
+          </div>
+        </td>
+
+        
 
         <div className="product-info">
           <div className="product-price">

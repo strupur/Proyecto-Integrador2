@@ -59,26 +59,20 @@
   width: max-content;
 }
 
-
-.product-description-l {
-  display: -webkit-box; 
-    -webkit-line-clamp: 5;
-    overflow: hidden; 
-    -webkit-box-orient: vertical;
+.description-container {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em; 
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: rgb(31, 109, 233);
+  font-size: 17px;
+  font-family: sans-serif;
   font-weight: 600;
-  text-align: center;
-  word-wrap: break-word;
-  color: rgb(29, 126, 237);
-  
 }
-
-.product-description-l:hover,
-.product-description-l:focus {
-  -webkit-line-clamp: unset; /* Quita el truncamiento */
-  overflow: visible;
-}
-
-
 
 .product-info {
   display: flex;
