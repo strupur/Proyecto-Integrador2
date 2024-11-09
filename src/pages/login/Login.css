@@ -8,115 +8,162 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
     justify-content: center;
     margin: auto;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
-    background: linear-gradient(315deg, rgb(21, 88, 244) 3%, rgba(60, 132, 206, 1) 38%, rgb(115, 48, 238) 68%, rgb(243, 25, 255) 98%);
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
+    background: linear-gradient(135deg, rgb(34, 115, 195) 10%, rgb(246, 247, 248) 90%);
+    animation: background-shift 12s ease infinite;
+    background-size: 300% 300%;
     background-attachment: fixed;
     position: relative;
 }
 
-@keyframes gradient {
+@keyframes background-shift {
     0% {
-        background-position: 0% 0%;
+        background-position: 0% 50%;
     }
-
     50% {
-        background-position: 100% 100%;
+        background-position: 100% 50%;
     }
-
     100% {
-        background-position: 0% 0%;
+        background-position: 0% 50%;
     }
 }
 
-.wave {
-    background: rgb(255 255 255 / 25%);
-    border-radius: 1300% 1300% 0 0;
+/* Notas musicales flotantes con más movimiento */
+.note {
     position: absolute;
-    width: 300%;
-    height: calc(40vh);
-    animation: wave 10s -3s linear infinite;
-    transform: translate3d(0, 0, 0);
-    opacity: 0.8;
-    bottom: 0;
-    left: 0;
-}
-
-.wave:nth-of-type(2) {
-    height: calc(40vh + 1.25em);
-    animation: wave 18s linear reverse infinite;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+    animation: float 10s ease-in-out infinite, drift 15s linear infinite;
     opacity: 0.8;
 }
 
-.wave:nth-of-type(3) {
-    height: calc(40vh + 2.5em);
-    animation: wave 20s -1s reverse infinite;
-    opacity: 0.9;
+.note:nth-of-type(1) {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
 }
 
-@keyframes wave {
-    2% {
-        transform: translateX(1);
+.note:nth-of-type(2) {
+    top: 20%;
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.note:nth-of-type(3) {
+    top: 15%;
+    left: 60%;
+    animation-delay: 4s;
+}
+
+.note:nth-of-type(4) {
+    top: 40%;
+    left: 75%;
+    animation-delay: 1s;
+}
+
+.note:nth-of-type(5) {
+    top: 35%;
+    left: 90%;
+    animation-delay: 3s;
+}
+
+.note:nth-of-type(6) {
+    top: 70%;
+    left: 10%;
+    animation-delay: 5s;
+}
+
+.note:nth-of-type(7) {
+    top: 85%;
+    left: 50%;
+    animation-delay: 3.5s;
+}
+
+.note:nth-of-type(8) {
+    top: 65%;
+    left: 80%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
     }
-
     25% {
-        transform: translateX(-25%);
+        transform: translateY(-30px);
     }
-
     50% {
-        transform: translateX(-50%);
+        transform: translateY(-50px);
     }
-
     75% {
-        transform: translateX(-25%);
+        transform: translateY(-30px);
     }
+}
 
+@keyframes drift {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
     100% {
-        transform: translateX(1);
+        transform: translateX(-20px);
     }
 }
 
 .login-form {
     z-index: 1;
-    padding: 1rem;
-    background-color: rgb(23, 23, 23);
+    padding: 1.5rem;
+    background-color: #1d1d1d;
     color: white;
-    border-radius: 0.5rem;
-    border: 1px solid #333;
-    max-width: 400px;
-    box-shadow: 1px 1px 7px #27272791;
-    ;
-
-    h1 {
-        text-align: center;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid royalblue;
-        padding-bottom: .5rem;
-        /* line-height: 1.5; */
-    }
+    border-radius: 0.75rem;
+    border: 1px solid #444;
+    max-width: 450px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgb(26, 114, 247);
+    padding-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
 
 .login-form input {
     width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
     border-radius: 0.5rem;
-    border: 1px solid #333;
+    border: 1px solid #555;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 1rem;
+}
+
+.login-form input::placeholder {
+    color: #bbb;
 }
 
 .login-form button {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border-radius: 0.5rem;
-    border: 1px solid #333;
-    background-color: royalblue;
+    border: none;
+    background-color: rgb(0, 94, 255);
     color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: rgb(44, 121, 255);
 }

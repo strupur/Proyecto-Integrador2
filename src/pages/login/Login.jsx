@@ -14,6 +14,16 @@ export default function Login() {
   return (
     <div className="login-container">
 
+<div className="note">♪</div>
+<div className="note">♪</div>
+    <div className="note">♬</div>
+    <div className="note">♩</div>
+    <div className="note">♫</div>
+    <div className="note">♭</div>
+    <div className="note">♮</div>
+    <div className="note">♯</div>
+    <div className="note">♪</div>
+
       <form className="login-form" onSubmit={handleSubmit(login)}>
         <h1>Login</h1>
         <label>Correo electrónico</label>

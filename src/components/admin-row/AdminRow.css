@@ -15,15 +15,67 @@
         color: rgb(0, 110, 255);
     }
 
-    .description {
+    .description-container {
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Limita a 3 líneas */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal; /* Permite truncar varias líneas */
+        position: relative;
+        cursor: pointer; /* Indica que es interactivo */
+      }
+      
+      .description-container:hover::after {
+        content: attr(data-full-text); /* Muestra el texto completo */
+        position: absolute;
+        top: 100%; /* Debajo del texto truncado */
+        left: 0;
+        width: max-content;
+        max-width: 300px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        white-space: normal; /* Permite que el texto se envuelva */
+        z-index: 10;
+        display: block;
+      }
+      
+      .description-container:hover {
+        overflow: visible; /* Asegura que el texto no se corte dentro del td */
+      }
+    
+    /* .description {
         .description-container {
             display: -webkit-box;
             -webkit-line-clamp: 3;
             overflow: hidden;
             -webkit-box-orient: vertical;
             color: rgb(0, 110, 255);
+            max-height: none;
+            height: auto;
         }
     }
+
+    .description:hover::after {
+        content: attr(data-full-text); 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: max-content;
+        max-width: 300px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        white-space: normal;
+        z-index: 100;
+      } */
+
+
 
     .price {
         font-weight: 600;

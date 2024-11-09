@@ -14,13 +14,17 @@ export default function AdminRow({ producto, deleteProduct, handleEditProduct })
       <td className="name">
         {producto.name}
       </td>
-      <td className="description">
 
-        <div className="description-container">
+      <td className="description">
+        <div
+          className="description-container"
+          data-full-text={producto.description}
+          title={producto.description}         
+        >
           {producto.description}
         </div>
-
       </td>
+
       <td className="price">
         ${producto.price}
       </td>
@@ -28,7 +32,7 @@ export default function AdminRow({ producto, deleteProduct, handleEditProduct })
         {producto.category}
       </td>
       <td className="date">
-        { formatDate(producto.createdAt) }
+        {formatDate(producto.createdAt)}
       </td>
       <td className="actions">
         <div className="actions-container">
