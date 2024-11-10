@@ -11,6 +11,7 @@ export default function AdminRow({ producto, deleteProduct, handleEditProduct })
       <td className="image">
         <img src={`${URL2}/images/products/${producto.image}`} alt={producto.name} />
       </td>
+      
       <td className="name">
         {producto.name}
       </td>

@@ -7,7 +7,6 @@ import './AdminProduct.css';
 import Swal from "sweetalert2";
 import { useUser } from "../../context/UserContext";
 
-// const URL = "https://66da9325f47a05d55be52fee.mockapi.io/api/v1";
 
 const URL2 = import.meta.env.VITE_LOCAL_SERVER;
 
@@ -124,7 +123,7 @@ export default function AdminProduct() {
 
       if(producto.image[0]) {
         formData.append("image", producto.image[0]);
-        //formData.append("imageFile", producto.image[0]);
+        
       }
 
 

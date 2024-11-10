@@ -15,12 +15,6 @@ export default function AdminTableRegister({ products, deleteProduct, handleEdit
           <th>
             Correo Electronico
           </th>
-          {/* <th>
-            Contraseña
-          </th>
-          <th>
-            Repetir Contraseña
-          </th> */}
           <th>
             Fecha de Nacimiento
           </th>

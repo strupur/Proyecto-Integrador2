@@ -25,11 +25,12 @@ export default function ProductCard({ prod }) {
         <div className="product-category">
           {prod.category}
         </div>
+
         <h1 className="product-title">
           {prod.name}
         </h1>
 
-        <td className="description">
+        <p className="description">
           <div
             className="description-container"
             data-full-text={prod.description}
@@ -37,7 +38,7 @@ export default function ProductCard({ prod }) {
           >
             {prod.description}
           </div>
-        </td>
+        </p>
 
         
 

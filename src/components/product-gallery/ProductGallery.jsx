@@ -2,10 +2,6 @@ import { useEffect, useState } from 'react';
 import ProductCard from '../product-card/ProductCard';
 import './ProductGallery.css';
 import axios from 'axios';
-import Pagination from '../pagination/Pagination';
-// import Pagination from '../pagination/Pagination';
-
-// const URL = import.meta.env.VITE_SERVER_URL;
 
 const URL2 = import.meta.env.VITE_LOCAL_SERVER;
 
@@ -18,8 +14,6 @@ export default function ProductGallery() {
         getProducts();
     }, [])
 
-
-    
 
     async function getProducts() {
 
@@ -48,8 +42,6 @@ export default function ProductGallery() {
                     products.map(producto => <ProductCard key={producto.id} prod={producto} />)
                 }
             </div>
-
-           {/* <Pagination total={7} limit={3} getFn={getProducts}/>  */}
 
         </section>
 

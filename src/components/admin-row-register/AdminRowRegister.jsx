@@ -3,8 +3,6 @@ import './AdminRowRegister.css';
 import {  faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { formatDate } from '../../utils/formatDate';
 
-// const URL2 = import.meta.env.VITE_LOCAL_SERVER
-
 export default function AdminRowRegister({ producto, deleteProduct, handleEditProduct }) {
   return (
     <tr className="admin-table-row">
@@ -20,14 +18,6 @@ export default function AdminRowRegister({ producto, deleteProduct, handleEditPr
       <td className="email">
         {producto.email}
       </td>
-
-      {/* <td className="password">
-        {producto.password}
-      </td>
-
-      <td className="repeatpass">
-        {producto.repeatpass}
-      </td> */}
 
       <td className="date">
       { formatDate(producto.createdAt) }
