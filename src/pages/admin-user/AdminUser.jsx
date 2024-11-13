@@ -31,10 +31,9 @@ export default function AdminUser() {
         setValue("description", selectedProduct.description),
         setValue("email", selectedProduct.email),
         setValue("password", selectedProduct.password),
-        setValue("repeatpass", selectedProduct.repeatpass),
         setValue("image", selectedProduct.image),
-        setValue("category", selectedProduct.category),
-        setValue("date", selectedProduct.createdAt)
+        setValue("country", selectedProduct.country),
+        setValue("DateBirth", selectedProduct.DateBirth)
         
 
     } else {
@@ -114,9 +113,11 @@ export default function AdminUser() {
 
       const formData = new FormData();
       formData.append("name", producto.name);
-      formData.append("price", producto.price);
+      formData.append("email", producto.email);
+      formData.append("password", producto.password);
       formData.append("description", producto.description);
-      formData.append("category", producto.category);
+      formData.append("country", producto.country);
+      formData.append("DateBirth", producto.DateBirth);
 
       if(producto.image[0]) {
         formData.append("image", producto.image[0]);
@@ -126,7 +127,7 @@ export default function AdminUser() {
       if (selectedProduct) {
 
         const { _id } = selectedProduct;
-        const response = await axios.put(`${URL2}/api/users/${_id}`, producto,{headers: {
+        const response = await axios.put(`${URL2}/api/users/${_id}`, formData,{headers: {
           Authorization: token
         }});
         console.log(response.data.users)
@@ -142,7 +143,7 @@ export default function AdminUser() {
 
       } else {
 
-        const response = await axios.post(`${URL2}/api/users`, producto ,{headers: {
+        const response = await axios.post(`${URL2}/api/users`, formData ,{headers: {
           Authorization: token
         }})
         console.log(response.data.products);
@@ -183,8 +184,8 @@ export default function AdminUser() {
 
             <div className="input-group-adminUser">
               <label htmlFor="">Imagen</label>
-              
-              <input type="url" {...register("image")} />
+              <input accept="image/*" type="file" {...register("image", { required: true })} />
+              {/* <input type="url" {...register("image")} /> */}
             </div>
 
             <div className="input-group-adminUser">
@@ -240,13 +241,13 @@ export default function AdminUser() {
             </div>
 
             <div className="input-group-adminUser">
-              <label htmlFor="createdAt">Fecha de Nacimiento</label>
-              <input type="date" {...register("createdAt", { required: true })} />
+              <label htmlFor="DateBirth">Fecha de Nacimiento</label>
+              <input type="date" {...register("DateBirth", { required: true })} />
             </div>
 
             <div className="input-group-adminUser">
               <label htmlFor="">Seleccione su Pais</label>
-              <select {...register("category", { required: true })}>\
+              <select {...register("country", { required: true })}>\
                 <option value=""></option>
                 <option value="Argentina">Argentina</option>
                 <option value="Bolivia">Bolivia</option>
